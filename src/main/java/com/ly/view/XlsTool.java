@@ -15,6 +15,9 @@ import java.awt.FlowLayout;
 import javax.swing.border.TitledBorder;
 import javax.swing.filechooser.FileFilter;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.ly.model.XlsToolModel;
 
 import javax.swing.JScrollPane;
@@ -27,6 +30,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class XlsTool {
+	static final Logger logger = LogManager.getLogger(XlsTool.class);
 
 	private JFrame frame;
 	private JTextField textFieldInputXls;
@@ -38,11 +42,13 @@ public class XlsTool {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		logger.info("XlsTool start");
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
 					XlsTool window = new XlsTool();
 					window.frame.setVisible(true);
+					logger.info("XlsTool start");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
