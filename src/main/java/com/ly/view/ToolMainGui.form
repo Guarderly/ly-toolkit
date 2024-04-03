@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.ly.view.ToolMainGui">
+  <tabbedpane id="4d96f" binding="jtabbedPane">
+    <constraints>
+      <xy x="20" y="20" width="680" height="632"/>
+    </constraints>
+    <properties>
+      <minimumSize width="100" height="100"/>
+      <preferredSize width="680" height="600"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="a1e0d" layout-manager="BorderLayout" hgap="0" vgap="0">
+        <constraints>
+          <tabbedpane title="无标题"/>
+        </constraints>
+        <properties>
+          <minimumSize width="680" height="600"/>
+        </properties>
+        <border type="none"/>
+        <children/>
+      </grid>
+    </children>
+  </tabbedpane>
+</form>

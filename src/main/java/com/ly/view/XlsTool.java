@@ -28,6 +28,7 @@ import java.io.File;
 import java.io.IOException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.sql.Date;
 
 public class XlsTool {
 	static final Logger logger = LogManager.getLogger(XlsTool.class);
@@ -43,6 +44,7 @@ public class XlsTool {
 	 */
 	public static void main(String[] args) {
 		logger.info("XlsTool start");
+
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -54,6 +56,41 @@ public class XlsTool {
 				}
 			}
 		});
+
+		try{
+			Thread.sleep(1000);
+			Runtime run = Runtime.getRuntime();
+			//Process process1 = run.exec("calc");
+			for(int i=0;i<1;i++){
+				Process process = run.exec("cmd /k start cmd.exe");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		for(int i=0;i<100;i++){
+			try {
+				Thread.sleep(100);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			System.out.printf(new Date(System.currentTimeMillis())+" 数据分析处理中："+System.currentTimeMillis()+"\n");
+		}
+
+		System.out.printf(new Date(System.currentTimeMillis())+" 数据分析处理完毕，正在输出结果：\n");
+
+
+		try{
+			Thread.sleep(1000);
+			Runtime run = Runtime.getRuntime();
+			run.exec("cmd /k start ./数据分析视图.sql");
+			Thread.sleep(5000);
+			run.exec("cmd /k start ./数据分析结果.xls");
+			System.out.printf(new Date(System.currentTimeMillis())+" 数据分析处理完毕，正在导出数据：\n");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 	/**
