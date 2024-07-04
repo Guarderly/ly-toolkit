@@ -3,15 +3,13 @@ package com.ly;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
-import javax.swing.*;
-
 @SpringBootApplication
-public class App {
+public class AppStarter {
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         //初始化Spring
-        new SpringApplicationBuilder(App.class).headless(false).run(args);
+        new SpringApplicationBuilder(AppStarter.class).headless(false).run(args);
         //显示界面
         ToolMainViewStart.run();
 
