@@ -12,8 +12,6 @@ public class JiraDataHandler {
 
     /**
      * 根据jira模版更新jiraList记录字段信息
-     * @param jiraDataList
-     * @param jiraDataFormat
      */
     public static void formatData(List<JiraData> jiraDataList, JiraData jiraDataFormat){
         if(jiraDataFormat ==null||jiraDataList==null){

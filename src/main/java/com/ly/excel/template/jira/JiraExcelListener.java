@@ -13,7 +13,7 @@ public class JiraExcelListener extends AnalysisEventListener<JiraData> {
 
     private static final int BATCH_MAX_COUNT = 10000;//最多一万条
 
-    private List<JiraData> dataList = new ArrayList<JiraData>();
+    private final List<JiraData> dataList = new ArrayList<>();
 
     @Override
     public void invoke(JiraData jiraData, AnalysisContext analysisContext) {
