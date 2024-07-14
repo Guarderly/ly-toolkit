@@ -1,9 +1,10 @@
-package com.ly.excel.jira;
+package com.ly.excel.template.jira;
 
 import com.alibaba.excel.context.AnalysisContext;
 import com.alibaba.excel.event.AnalysisEventListener;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class JiraExcelListener extends AnalysisEventListener<JiraData> {
 
     private static final int BATCH_MAX_COUNT = 10000;//最多一万条
 
-    private final List<JiraData> dataList = new ArrayList<>();
+    private List<JiraData> dataList = new ArrayList<JiraData>();
 
     @Override
     public void invoke(JiraData jiraData, AnalysisContext analysisContext) {
