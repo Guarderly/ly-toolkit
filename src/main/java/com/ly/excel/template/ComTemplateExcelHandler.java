@@ -15,11 +15,12 @@ import java.util.Map;
 public class ComTemplateExcelHandler {
         private static final Logger logger = LoggerFactory.getLogger(ComTemplateExcelHandler.class);
     public static void main(String[] args) {
-            if(StringUtils.isEmpty(args)||StringUtils.isEmpty(args[0])){
+            if(StringUtils.isEmpty(args)){
                     return;
             }
 
             //获取文件名
+            //String filePath = "D:\\git\\ly-toolkit\\out\\artifacts\\ly_toolkit_jar\\jira.xls";//args[0];
             String filePath = args[0];
 
             //获取通用模版
@@ -42,7 +43,7 @@ public class ComTemplateExcelHandler {
 
             //输出xls
             String prefix = "f"+ DateUtil.getCurrentDateStr("MMdd")+"_";
-            String outFileName = prefix+ NameUtil.getNoPrefixName(filePath,"\\w\\d\\d\\d\\d_");
+            String outFileName = prefix+ NameUtil.getNoPrefixName(NameUtil.getFileName(filePath),"\\w\\d\\d\\d\\d_");
             String headerPath = "jira-template-header.xls";
             EasyExcel.write(outFileName).withTemplate(headerPath).sheet().doWrite(jiraDataList);
     }

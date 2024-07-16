@@ -10,6 +10,11 @@ public class NameUtil {
      * @return
      */
     public static String getNoPrefixName(String name,String prefix){
+
        return name.replaceFirst(prefix,"");
+    }
+
+    public static String getFileName(String path){
+        return path.replaceAll(".*\\\\","");
     }
 }
