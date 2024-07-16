@@ -41,17 +41,8 @@ public class ComTemplateExcelListenerTest {
         //输出xls
         String prefix = "f"+ DateUtil.getCurrentDateStr("MMdd")+"_";
         String outFileName = prefix+ NameUtil.getNoPrefixName(filePath,"\\w\\d\\d\\d\\d_");
-        EasyExcel.write(outFileName).sheet().doWrite(jiraDataList);
-//
-//        com.ly.excel.jira.JiraExcelListener jiraTamplateExcelListener = new JiraExcelListener();
-//        EasyExcel.read(tamplatePath, com.ly.excel.jira.JiraData.class,jiraTamplateExcelListener).sheet().doRead();
-//        //解析模版，处理表达式内容
-//        com.ly.excel.jira.JiraData jiraDataTamplate= com.ly.excel.jira.JiraDataHandler.parseJiraDataTamplate(jiraTamplateExcelListener.getDataList().get(0));
-//        //根据模版格式化数据
-//        com.ly.excel.jira.JiraDataHandler.formatData(jiraDataList, JiraDataHandler.createJiraDataModel());
-//        //输出xls
-//        String prefix = "f"+ DateUtil.getCurrentDateStr("MMdd")+"_";
-//        String outFileName = prefix+ NameUtil.getNoPrefixName(filePath,"\\w\\d\\d\\d\\d_");
-//        EasyExcel.write(outFileName, JiraData.class).sheet().doWrite(jiraDataList);
+        String headerPath = "jira-template-header.xls";
+        EasyExcel.write(outFileName).withTemplate(headerPath).sheet().doWrite(jiraDataList);
+
     }
 }

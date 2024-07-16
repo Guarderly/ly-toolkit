@@ -4,6 +4,7 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.ExcelReader;
 import com.ly.utils.DateUtil;
 import com.ly.utils.ExpressionUtil;
+import org.springframework.util.StringUtils;
 
 import java.lang.reflect.Field;
 import java.util.HashMap;
@@ -38,6 +39,9 @@ public class ComTemplateDataHandler {
         for(Map.Entry<Integer, String> field:dataFormat.entrySet()){
             Integer key = field.getKey();
             String value = field.getValue();
+            if(StringUtils.isEmpty(value)){
+                continue;
+            }
             data.put(key,value);
         }
     }
@@ -53,6 +57,9 @@ public class ComTemplateDataHandler {
         for(Map.Entry<Integer, String> field:templateData.entrySet()){
             Integer key = field.getKey();
             String value = field.getValue();
+            if(StringUtils.isEmpty(value)){
+                continue;
+            }
             templateData.put(key,ExpressionUtil.parse(value));
         }
         return templateData;
