@@ -37,7 +37,7 @@
 	  <dependency>
 		  <groupId>com.alibaba</groupId>
 		  <artifactId>fastjson</artifactId>
-		  <version>1.2.75</version> <!-- 请使用最新的稳定版本 -->
+		  <version>1.2.83</version> <!-- 请使用最新的稳定版本 -->
 	  </dependency>
   	<!-- 引入log4j2日志 -->
   	<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->

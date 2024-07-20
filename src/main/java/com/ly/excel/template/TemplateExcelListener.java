@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class ComTemplateExcelListener extends AnalysisEventListener<Map<Integer, String>> {
-    private static final Logger logger = LoggerFactory.getLogger(ComTemplateExcelListener.class);
+public class TemplateExcelListener extends AnalysisEventListener<Map<Integer, String>> {
+    private static final Logger logger = LoggerFactory.getLogger(TemplateExcelListener.class);
 
     private static final int BATCH_MAX_COUNT = 10000;//最多一万条
 

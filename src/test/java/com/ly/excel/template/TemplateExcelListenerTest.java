@@ -11,10 +11,8 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.Map;
 
-import static org.testng.Assert.*;
-
-public class ComTemplateExcelListenerTest {
-    private static final Logger logger = LoggerFactory.getLogger(ComTemplateExcelListenerTest.class);
+public class TemplateExcelListenerTest {
+    private static final Logger logger = LoggerFactory.getLogger(TemplateExcelListenerTest.class);
 
     @Test
     public void testInvoke() {
@@ -25,18 +23,18 @@ public class ComTemplateExcelListenerTest {
             // 返回每条数据的键值对 表示所在的列 和所在列的值
             logger.info("读取到数据:{}:{}", JSON.toJSONString(data));
         }
-        Map<Integer, String> dataTamplate = ComTemplateDataHandler.parseMapTemplate(listMap.get(0));
+        Map<Integer, String> dataTemplate = TemplateDataHandler.parseMapTemplate(listMap.get(0));
 
         String filePath = "f0705_jira.xls";
 
         //解析xls
-        ComTemplateExcelListener comTemplateExcelListener = new ComTemplateExcelListener();
-        EasyExcel.read(filePath, comTemplateExcelListener).sheet().doRead();
+        TemplateExcelListener templateExcelListener = new TemplateExcelListener();
+        EasyExcel.read(filePath, templateExcelListener).sheet().doRead();
         //获取数据
-        List<Map<Integer, String>> jiraDataList = comTemplateExcelListener.getDataList();
+        List<Map<Integer, String>> jiraDataList = templateExcelListener.getDataList();
 
         //根据模版格式化数据
-        ComTemplateDataHandler.formatData(jiraDataList,dataTamplate);
+        TemplateDataHandler.formatData(jiraDataList,dataTemplate);
 
         //输出xls
         String prefix = "f"+ DateUtil.getCurrentDateStr("MMdd")+"_";

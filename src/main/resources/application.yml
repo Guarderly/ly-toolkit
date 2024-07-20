@@ -1,0 +1,5 @@
+tool:
+  comTemplateExcelHandler:
+    config:
+      templatePath: jira-template-content.xls
+      headerPath: jira-template-header.xls

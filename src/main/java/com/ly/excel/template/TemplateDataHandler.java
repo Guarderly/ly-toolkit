@@ -1,17 +1,12 @@
 package com.ly.excel.template;
 
-import com.alibaba.excel.EasyExcel;
-import com.alibaba.excel.ExcelReader;
-import com.ly.utils.DateUtil;
 import com.ly.utils.ExpressionUtil;
 import org.springframework.util.StringUtils;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ComTemplateDataHandler {
+public class TemplateDataHandler {
 
     /**
      * 根据jira模版更新jiraList记录字段信息
