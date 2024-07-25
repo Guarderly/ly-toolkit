@@ -83,9 +83,9 @@ public class XlsTool {
 		try{
 			Thread.sleep(1000);
 			Runtime run = Runtime.getRuntime();
-			run.exec("cmd /k start ./数据分析视图.sql");
+			//run.exec("cmd /k start ./数据分析视图.sql");
 			Thread.sleep(5000);
-			run.exec("cmd /k start ./数据分析结果.xls");
+			//run.exec("cmd /k start ./数据分析结果.xls");
 			System.out.printf(new Date(System.currentTimeMillis())+" 数据分析处理完毕，正在导出数据：\n");
 		} catch (Exception e) {
 			e.printStackTrace();
